@@ -19,12 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SppActivity.SppActivity"></activity>
+        <activity android:name=".activity.SppActivity.SppActivity" />
         <activity
             android:name=".activity.MenuActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".activity.Scanner"/>
+            android:name=".activity.Scanner"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
     </application>
 
 </manifest>

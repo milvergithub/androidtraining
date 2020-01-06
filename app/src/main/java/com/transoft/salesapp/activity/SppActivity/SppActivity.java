@@ -17,11 +17,22 @@ public class SppActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spp);
-        getSupportActionBar().setTitle(R.string.btn_spp);
+        initComponents();
+        setupWidgets();
+        setupBottomNavigationView();
+    }
+
+    private void initComponents() {
+
+    }
+
+    private void setupWidgets() {
+
+    }
+
+    private void setupBottomNavigationView() {
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_reception, R.id.navigation_dashboard, R.id.navigation_notifications
-        ).build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_reception, R.id.navigation_dashboard, R.id.navigation_notifications).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);

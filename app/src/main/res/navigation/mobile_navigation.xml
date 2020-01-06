@@ -6,17 +6,17 @@
     app:startDestination="@+id/navigation_reception">
     <fragment
         android:id="@+id/navigation_reception"
-        android:name="com.transoft.salesapp.activity.SppActivity.reception.ReceptionFragment"
+        android:name="com.transoft.salesapp.activity.SppActivity.reception.ReceptionFormFragment"
         android:label="@string/title_reception"
-        tools:layout="@layout/fragment_reception" />
+        tools:layout="@layout/fragment_form_reception" />
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.transoft.salesapp.activity.SppActivity.reception.ReceptionFragment"
+        android:name="com.transoft.salesapp.activity.SppActivity.reception.ReceptionFormFragment"
         android:label="@string/title_reception"
-        tools:layout="@layout/fragment_reception" />
+        tools:layout="@layout/fragment_form_reception" />
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.transoft.salesapp.activity.SppActivity.reception.ReceptionFragment"
+        android:name="com.transoft.salesapp.activity.SppActivity.reception.ReceptionFormFragment"
         android:label="@string/title_reception"
-        tools:layout="@layout/fragment_reception" />
+        tools:layout="@layout/fragment_form_reception" />
 </navigation>

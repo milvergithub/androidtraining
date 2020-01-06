@@ -1,18 +1,14 @@
 package com.transoft.salesapp.activity.SppActivity.reception;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import com.transoft.salesapp.R;
+import com.transoft.salesapp.adapter.PickUpAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,20 +18,29 @@ import com.transoft.salesapp.R;
  */
 public class ReceptionFragment extends Fragment {
 
-    private ReceptionViewModel receptionViewModel;
+    private RecyclerView mRecyclerView;
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        receptionViewModel = ViewModelProviders.of(this).get(ReceptionViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_reception, container,false);
-        final TextView textView = root.findViewById(R.id.text_reception);
-        receptionViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setupWidgets();
+        initialize();
     }
+
+    private void initialize() {
+        mRecyclerView = (RecyclerView)getView().findViewById(R.id.recycler_view);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_reception, container, false);
+    }
+
+    private void setupWidgets() {
+        LinearLayoutManager llmPlace = new LinearLayoutManager(getView().getContext(), LinearLayoutManager.VERTICAL, false);
+        mRecyclerView.setLayoutManager(llmPlace);
+        PickUpAdapter receptionAdapter = new PickUpAdapter(getView().getContext());
+        mRecyclerView.setAdapter(receptionAdapter);
+    }
+
 }
