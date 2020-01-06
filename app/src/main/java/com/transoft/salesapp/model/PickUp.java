@@ -6,7 +6,7 @@ public class PickUp {
     private String name;
     private String address;
     private String phone;
-    private Double amount;
+    private String amount;
 
     public Integer getId() {
         return id;
@@ -40,11 +40,11 @@ public class PickUp {
         this.phone = phone;
     }
 
-    public Double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 }

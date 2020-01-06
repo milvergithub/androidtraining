@@ -1,6 +1,8 @@
 package com.transoft.salesapp.activity.SppActivity.reception;
 
+import android.content.Context;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,29 +20,26 @@ import com.transoft.salesapp.adapter.PickUpAdapter;
  */
 public class ReceptionFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
+    private View rootView;
+    private RecyclerView list;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setupWidgets();
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        rootView = (View) inflater.inflate(R.layout.fragment_reception, container, false);
         initialize();
+        setupWidgets();
+        return rootView;
     }
 
     private void initialize() {
-        mRecyclerView = (RecyclerView)getView().findViewById(R.id.recycler_view);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_reception, container, false);
+        list = (RecyclerView)rootView.findViewById(R.id.recycler_view);
     }
 
     private void setupWidgets() {
-        LinearLayoutManager llmPlace = new LinearLayoutManager(getView().getContext(), LinearLayoutManager.VERTICAL, false);
-        mRecyclerView.setLayoutManager(llmPlace);
-        PickUpAdapter receptionAdapter = new PickUpAdapter(getView().getContext());
-        mRecyclerView.setAdapter(receptionAdapter);
+        LinearLayoutManager llmPlace = new LinearLayoutManager((Context) rootView.getContext(), LinearLayoutManager.VERTICAL, false);
+        list.setLayoutManager(llmPlace);
+        PickUpAdapter receptionAdapter = new PickUpAdapter(rootView.getContext());
+        list.setAdapter(receptionAdapter);
     }
 
 }

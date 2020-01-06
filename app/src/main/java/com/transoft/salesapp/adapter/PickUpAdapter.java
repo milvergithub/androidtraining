@@ -20,7 +20,7 @@ import java.util.List;
 
 public class PickUpAdapter extends RecyclerView.Adapter<PickUpAdapter.ItemHolder> {
 
-    private List<PickUp> mPickUps = new ArrayList<>();
+    private List<PickUp> pickUps = new ArrayList<>();
     private Context context;
     private final OnPickUpClickListener mListener;
     public PickUpAdapter(Context context){
@@ -29,7 +29,16 @@ public class PickUpAdapter extends RecyclerView.Adapter<PickUpAdapter.ItemHolder
         try {
             this.mListener = ((OnPickUpClickListener) context);
         } catch (ClassCastException e) {
-            throw new ClassCastException("Activity must implement OnPlaceClickListener.");
+            throw new ClassCastException("Activity must implement OnPickUpClickListener.");
+        }
+
+        for (int i = 0; i < 10; i++) {
+            PickUp pickUp = new PickUp();
+            pickUp.setAmount("10.5");
+            pickUp.setName("Demo 1");
+            pickUp.setAddress("Quillacollo");
+            pickUp.setPhone("75698745");
+            pickUps.add(pickUp);
         }
     }
 
@@ -43,7 +52,7 @@ public class PickUpAdapter extends RecyclerView.Adapter<PickUpAdapter.ItemHolder
 
     @Override
     public void onBindViewHolder(@NonNull final ItemHolder holder, int position) {
-        final PickUp pickUp =  mPickUps.get(position);
+        final PickUp pickUp =  pickUps.get(position);
 
         holder.mItem = pickUp;
 
@@ -99,6 +108,6 @@ public class PickUpAdapter extends RecyclerView.Adapter<PickUpAdapter.ItemHolder
 
     @Override
     public int getItemCount() {
-        return mPickUps.size();
+        return pickUps.size();
     }
 }

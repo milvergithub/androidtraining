@@ -10,8 +10,10 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.transoft.salesapp.R;
+import com.transoft.salesapp.adapter.PickUpAdapter;
+import com.transoft.salesapp.model.PickUp;
 
-public class SppActivity extends AppCompatActivity {
+public class SppActivity extends AppCompatActivity implements PickUpAdapter.OnPickUpClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +38,15 @@ public class SppActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
+
+    @Override
+    public void onPickUpClickListener(PickUp pickUp) {
+        System.out.println("aaaaaaaaaaaaaaaaaa");
+    }
+
+    @Override
+    public void onPickUpFavoriteClick(PickUp pickUp) {
+        System.out.println("bbbbbbbbbbbbbbbbbb");
     }
 }
