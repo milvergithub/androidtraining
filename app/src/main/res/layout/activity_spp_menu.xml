@@ -5,8 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/headerColor">
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@drawable/header_shape"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:tint="@color/colorPrimary"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_up_list"
+                android:layout_centerInParent="true"
+                android:textSize="30dp"
+                android:textColor="@color/white"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:focusable="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"/>
+    </LinearLayout>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:layout_marginTop="60dp"
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,13 +74,20 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingStart="@dimen/_10sdp"
                         android:background="@drawable/card_rounded_blue">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/ic_pick_up_truck"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/pick_up_list"
                             android:textColor="@color/white"
+                            android:paddingLeft="@dimen/_10sdp"
                             android:textSize="30dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -60,11 +111,18 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingStart="@dimen/_10sdp"
                         android:background="@drawable/card_rounded_red">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/ic_delivery"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="@dimen/_10sdp"
                             android:text="Entregas"
                             android:textColor="@color/white"
                             android:textSize="30dp" />
@@ -89,11 +147,18 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingStart="@dimen/_10sdp"
                         android:background="@drawable/card_rounded_green">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/ic_maps"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingStart="@dimen/_10sdp"
                             android:text="Mapas"
                             android:textColor="@color/white"
                             android:textSize="30dp" />
