@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity.SppActivity;
+package com.transoft.salesapp.activity.pickup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -13,12 +13,12 @@ import com.transoft.salesapp.R;
 import com.transoft.salesapp.adapter.PickUpAdapter;
 import com.transoft.salesapp.model.PickUp;
 
-public class SppActivity extends AppCompatActivity implements PickUpAdapter.OnPickUpClickListener {
+public class PickUpActivity extends AppCompatActivity implements PickUpAdapter.OnPickUpClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spp);
+        setContentView(R.layout.activity_pick_up);
         initComponents();
         setupWidgets();
         setupBottomNavigationView();

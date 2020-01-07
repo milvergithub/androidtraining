@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity.SppActivity.reception;
+package com.transoft.salesapp.activity.pickup.reception;
 
 import android.os.Bundle;
 

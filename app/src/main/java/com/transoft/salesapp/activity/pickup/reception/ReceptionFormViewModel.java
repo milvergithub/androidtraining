@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity.SppActivity.reception;
+package com.transoft.salesapp.activity.pickup.reception;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

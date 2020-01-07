@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
 import com.transoft.salesapp.R;
-import com.transoft.salesapp.activity.SppActivity.SppActivity;
-import com.transoft.salesapp.utils.AndroidUtil;
+import com.transoft.salesapp.activity.pickup.SppMenuActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -30,8 +28,6 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void setupWidgets() {
-        Window window = getWindow();
-        AndroidUtil.statusBarColorTransparentWithKeyboard(this, window);
         btnSales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +37,7 @@ public class MenuActivity extends AppCompatActivity {
         btnSpp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), SppActivity.class));
+                startActivity(new Intent(getApplicationContext(), SppMenuActivity.class));
             }
         });
     }
