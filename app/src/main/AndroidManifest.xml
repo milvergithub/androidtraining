@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.spp.PickUpFormActivity"></activity>
-        <activity android:name=".activity.spp.PickUpListActivity" />
+        <activity
+            android:name=".activity.spp.PickUpListActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity
             android:name=".activity.spp.SppMenuActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

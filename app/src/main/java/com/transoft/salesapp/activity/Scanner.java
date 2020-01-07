@@ -19,10 +19,6 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.transoft.salesapp.R;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-
 public class Scanner extends AppCompatActivity {
 
     private CodeScanner codeScanner;
@@ -94,36 +90,5 @@ public class Scanner extends AppCompatActivity {
     public static void separate(String QRcode) {
         System.out.println("I am here");
         System.out.println(QRcode);
-        String refcode = QRcode.substring(0, 6);
-        System.out.println(refcode);
-        //expiry=qrcode.substr(qrcode.length-9,8)
-        String expiry = QRcode.substring(33, 41);
-        String expirydate = expiry.substring(0, 4) + "/" + expiry.substring(4, 6) + "/" + expiry.substring(6, 8);
-        System.out.println(expiry);
-        String patchid = QRcode.substring(20, 25);
-        //patchid= QRcode.length()-22;
-        System.out.println(patchid);
-        String manufacturing = QRcode.substring(25, 33);
-        System.out.println(manufacturing);
-        String manufacturingdate = manufacturing.substring(0, 4) + "/" + manufacturing.substring(4, 6) + "/" + manufacturing.substring(6, 8);
-        System.out.println(manufacturingdate);
-        String totstring = patchid + "," + refcode + "," + manufacturingdate + "," + expirydate;
-        System.out.println(refcode + "," + patchid + "," + manufacturingdate + "," + expirydate);
-        saveRecord(refcode, patchid, manufacturingdate, expirydate, "./Read.csv");
-    }
-
-    public static void saveRecord(String refcode, String patchid, String manu, String exp, String filepath) {
-        try {
-            FileWriter fw = new FileWriter(filepath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            pw.println(patchid + "," + refcode + "," + manu + "," + exp);
-            System.out.println("hi");
-            pw.flush();
-            pw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 }

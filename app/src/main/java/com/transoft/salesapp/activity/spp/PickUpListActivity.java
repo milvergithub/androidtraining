@@ -1,10 +1,14 @@
 package com.transoft.salesapp.activity.spp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.transoft.salesapp.R;
 import com.transoft.salesapp.adapter.PickUpAdapter;
@@ -27,6 +31,12 @@ public class PickUpListActivity extends AppCompatActivity implements PickUpAdapt
     }
 
     private void setupWidgets() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.headerColor));
+        }
         LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         list.setLayoutManager(llmPlace);
         PickUpAdapter receptionAdapter = new PickUpAdapter(this);
@@ -35,11 +45,11 @@ public class PickUpListActivity extends AppCompatActivity implements PickUpAdapt
 
     @Override
     public void onPickUpClickListener(PickUp pickUp) {
-
+        System.out.println("Event : onPickUpClickListener");
     }
 
     @Override
     public void onPickUpFavoriteClick(PickUp pickUp) {
-
+        System.out.println("Event : onPickUpFavoriteClick");
     }
 }
