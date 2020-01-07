@@ -1,13 +1,11 @@
-package com.transoft.salesapp.activity.pickup;
+package com.transoft.salesapp.activity.spp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-
 import com.transoft.salesapp.R;
 import com.transoft.salesapp.utils.AndroidUtil;
 
@@ -35,7 +33,7 @@ public class SppMenuActivity extends AppCompatActivity {
         cardPickUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PickUpActivity.class));
+                startActivity(new Intent(getApplicationContext(), PickUpListActivity.class));
             }
         });
         cardDelivery.setOnClickListener(new View.OnClickListener() {

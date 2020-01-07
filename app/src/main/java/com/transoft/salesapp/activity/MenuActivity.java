@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.transoft.salesapp.R;
-import com.transoft.salesapp.activity.pickup.SppMenuActivity;
+import com.transoft.salesapp.activity.spp.SppMenuActivity;
 
 public class MenuActivity extends AppCompatActivity {
 

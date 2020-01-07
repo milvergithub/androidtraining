@@ -12,9 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.spp.PickUpFormActivity"></activity>
+        <activity android:name=".activity.spp.PickUpListActivity" />
         <activity
-            android:name=".activity.pickup.SppMenuActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+            android:name=".activity.spp.SppMenuActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
