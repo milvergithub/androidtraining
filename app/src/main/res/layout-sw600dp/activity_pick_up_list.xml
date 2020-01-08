@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/headerColor"
-    tools:context=".activity.spp.PickUpListActivity">
+    tools:context=".ui.spp.PickUpListActivity">
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

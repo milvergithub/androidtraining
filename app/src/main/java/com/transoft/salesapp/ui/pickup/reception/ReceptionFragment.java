@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity.pickup.reception;
+package com.transoft.salesapp.ui.pickup.reception;
 
 import android.content.Context;
 import android.os.Bundle;

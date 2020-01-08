@@ -14,26 +14,26 @@
         android:theme="@style/AppTheme">
         <activity
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:name=".activity.spp.PickUpFormActivity"></activity>
+            android:name=".ui.spp.PickUpFormActivity"></activity>
         <activity
-            android:name=".activity.spp.PickUpListActivity"
+            android:name=".ui.spp.PickUpListActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity
-            android:name=".activity.spp.SppMenuActivity"
+            android:name=".ui.spp.SppMenuActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.pickup.PickUpActivity" />
+        <activity android:name=".ui.pickup.PickUpActivity" />
         <activity
-            android:name=".activity.MenuActivity"
+            android:name=".ui.MenuActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".activity.Scanner"
+            android:name=".ui.Scanner"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
     </application>
 

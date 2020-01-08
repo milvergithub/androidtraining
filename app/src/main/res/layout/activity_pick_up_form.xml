@@ -198,15 +198,19 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="@dimen/section_margin_top"
                 android:layout_below="@id/amount_section">
-
                 <Button
-                    android:layout_width="155dp"
+                    android:id="@+id/btn_pu_save"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:text="SAVE" />
-
                 <Button
-                    android:id="@+id/button"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/btn_pu_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

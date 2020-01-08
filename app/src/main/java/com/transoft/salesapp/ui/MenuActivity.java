@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity;
+package com.transoft.salesapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.transoft.salesapp.R;
-import com.transoft.salesapp.activity.spp.SppMenuActivity;
+import com.transoft.salesapp.ui.spp.SppMenuActivity;
 
 public class MenuActivity extends AppCompatActivity {
 

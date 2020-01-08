@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity.pickup;
+package com.transoft.salesapp.ui.pickup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;

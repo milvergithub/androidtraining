@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity.spp;
+package com.transoft.salesapp.ui.spp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -14,7 +14,6 @@ import android.view.WindowManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.transoft.salesapp.R;
-import com.transoft.salesapp.activity.pickup.PickUpActivity;
 import com.transoft.salesapp.adapter.PickUpAdapter;
 import com.transoft.salesapp.model.PickUp;
 

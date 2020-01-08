@@ -1,50 +1,46 @@
-package com.transoft.salesapp.activity.spp;
+package com.transoft.salesapp.ui.spp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
+import android.widget.Button;
 
 import com.transoft.salesapp.R;
 import com.transoft.salesapp.utils.AndroidUtil;
 
-public class SppMenuActivity extends AppCompatActivity {
+public class PickUpFormActivity extends AppCompatActivity {
 
-    private CardView cardPickUp;
-    private CardView cardDelivery;
+    private Button btnSave, btnCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spp_menu);
+        setContentView(R.layout.activity_pick_up_form);
         initialize();
         setupWidgets();
     }
 
     private void initialize() {
-        cardPickUp = findViewById(R.id.card_pick_up);
-        cardDelivery = findViewById(R.id.card_delivery);
+        btnSave = findViewById(R.id.btn_pu_save);
+        btnCancel = findViewById(R.id.btn_pu_cancel);
     }
 
     private void setupWidgets() {
         Window window = getWindow();
         AndroidUtil.statusBarColorTransparentWithKeyboard(this, window);
-        cardPickUp.setOnClickListener(new View.OnClickListener() {
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PickUpListActivity.class));
             }
         });
-        cardDelivery.setOnClickListener(new View.OnClickListener() {
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("CLICK DELIVERY...");
+                startActivity(new Intent(getApplicationContext(), PickUpListActivity.class));
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity;
+package com.transoft.salesapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

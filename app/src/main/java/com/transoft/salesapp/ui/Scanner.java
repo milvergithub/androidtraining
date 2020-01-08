@@ -1,4 +1,4 @@
-package com.transoft.salesapp.activity;
+package com.transoft.salesapp.ui;
 
 import android.Manifest;
 import android.os.Bundle;
