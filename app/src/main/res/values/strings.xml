@@ -5,6 +5,7 @@
     <string name="title_activity_spp">SppActivity</string>
     <string name="title_reception">Recojos</string>
     <string name="pick_up_list">Recojos</string>
+    <string name="spp_title">SPP</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
