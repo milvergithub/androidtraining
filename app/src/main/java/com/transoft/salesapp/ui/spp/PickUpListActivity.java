@@ -17,10 +17,15 @@ import com.transoft.salesapp.R;
 import com.transoft.salesapp.adapter.PickUpAdapter;
 import com.transoft.salesapp.model.PickUp;
 
-public class PickUpListActivity extends AppCompatActivity implements PickUpAdapter.OnPickUpClickListener {
+import javax.inject.Inject;
 
-    private RecyclerView list;
+public class PickUpListActivity extends AppCompatActivity implements PickUpAdapter.OnItemCardClickListener {
+
+    private RecyclerView recyclerView;
     private FloatingActionButton addButton;
+
+    @Inject
+    public PickUpAdapter pickUpAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +36,7 @@ public class PickUpListActivity extends AppCompatActivity implements PickUpAdapt
     }
 
     private void initialize() {
-        list = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         addButton = findViewById(R.id.add_pick_up);
     }
 
@@ -43,9 +48,8 @@ public class PickUpListActivity extends AppCompatActivity implements PickUpAdapt
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorAccentDark));
         }
         LinearLayoutManager llmPlace = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        list.setLayoutManager(llmPlace);
-        PickUpAdapter receptionAdapter = new PickUpAdapter(this);
-        list.setAdapter(receptionAdapter);
+        recyclerView.setLayoutManager(llmPlace);
+        recyclerView.setAdapter(pickUpAdapter);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,10 +62,5 @@ public class PickUpListActivity extends AppCompatActivity implements PickUpAdapt
     @Override
     public void onPickUpClickListener(PickUp pickUp) {
         System.out.println("Event : onPickUpClickListener");
-    }
-
-    @Override
-    public void onPickUpFavoriteClick(PickUp pickUp) {
-        System.out.println("Event : onPickUpFavoriteClick");
     }
 }

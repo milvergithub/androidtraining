@@ -13,7 +13,7 @@ import com.transoft.salesapp.R;
 import com.transoft.salesapp.adapter.PickUpAdapter;
 import com.transoft.salesapp.model.PickUp;
 
-public class PickUpActivity extends AppCompatActivity implements PickUpAdapter.OnPickUpClickListener {
+public class PickUpActivity extends AppCompatActivity implements PickUpAdapter.OnItemCardClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,4 @@ public class PickUpActivity extends AppCompatActivity implements PickUpAdapter.O
         System.out.println("aaaaaaaaaaaaaaaaaa");
     }
 
-    @Override
-    public void onPickUpFavoriteClick(PickUp pickUp) {
-        System.out.println("bbbbbbbbbbbbbbbbbb");
-    }
 }

@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import com.transoft.salesapp.R;
 import com.transoft.salesapp.adapter.PickUpAdapter;
 
+import javax.inject.Inject;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -21,7 +23,10 @@ import com.transoft.salesapp.adapter.PickUpAdapter;
 public class ReceptionFragment extends Fragment {
 
     private View rootView;
-    private RecyclerView list;
+    private RecyclerView recyclerView;
+
+    @Inject
+    public PickUpAdapter pickUpAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,14 +37,13 @@ public class ReceptionFragment extends Fragment {
     }
 
     private void initialize() {
-        list = (RecyclerView)rootView.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
     }
 
     private void setupWidgets() {
         LinearLayoutManager llmPlace = new LinearLayoutManager((Context) rootView.getContext(), LinearLayoutManager.VERTICAL, false);
-        list.setLayoutManager(llmPlace);
-        PickUpAdapter receptionAdapter = new PickUpAdapter(rootView.getContext());
-        list.setAdapter(receptionAdapter);
+        recyclerView.setLayoutManager(llmPlace);
+        recyclerView.setAdapter(pickUpAdapter);
     }
 
 }
